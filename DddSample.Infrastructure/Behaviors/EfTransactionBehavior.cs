@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using DddSample.Infrastructure.Persistance;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace DddSample.Infrastructure.Behaviors
@@ -6,9 +7,9 @@ namespace DddSample.Infrastructure.Behaviors
     internal sealed class EfTransactionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
 
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public EfTransactionBehavior(DbContext dbContext) => _dbContext = dbContext;
+        public EfTransactionBehavior(AppDbContext dbContext) => _dbContext = dbContext;
 
 
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)

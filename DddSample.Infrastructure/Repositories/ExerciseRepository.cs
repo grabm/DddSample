@@ -1,4 +1,4 @@
-﻿using DddSample.Application.Exercises.Interfaces;
+﻿    using DddSample.Application.Exercises.Interfaces;
 using DddSample.Domain.Exercises;
 using DddSample.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
