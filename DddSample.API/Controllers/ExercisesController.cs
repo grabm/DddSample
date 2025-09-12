@@ -39,7 +39,7 @@ namespace DddSample.API.Controllers
             [FromBody] CreateExerciseCommand cmd,
             CancellationToken cancellationToken)
         {
-            var dto = _mediator.Send(cmd, cancellationToken);
+            var dto = await _mediator.Send(cmd, cancellationToken);
 
             return Created($"/api/exercises/{dto.Id}", dto);
 

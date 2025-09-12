@@ -16,7 +16,7 @@ namespace DddSample.Application
             services.AddValidatorsFromAssembly(assembly);
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-            
+
             return services;
         }
     }
